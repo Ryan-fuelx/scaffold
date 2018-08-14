@@ -1,4 +1,5 @@
 <?php
+
 use Dingo\Api\Routing\Router;
 
 /** @var Router $api */
@@ -29,8 +30,7 @@ $api->version('v1', function (Router $api) {
         ]);
     });
 
-    require(base_path('Modules/User/routes.php'));
-    require(base_path('Modules/Upload/routes.php'));
-    require(base_path('Modules/ActivityLog/routes.php'));
-    require(base_path('Modules/Notification/routes.php'));
+    foreach (glob(base_path('Modules/*/routes.php')) as $routeFile) {
+        require($routeFile);
+    }
 });

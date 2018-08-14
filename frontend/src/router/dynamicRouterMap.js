@@ -123,6 +123,7 @@ export default [
         meta: { title: () => i18n.t('activity_log.title'), icon: 'table' }
       }
     ]
-  }
+  },
+  ...require('./post').default
   // Append More Routes. Don't remove me
 ]
