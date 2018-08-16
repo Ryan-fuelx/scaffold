@@ -15,39 +15,6 @@ import i18n from '../lang'
     icon: 'svg-name'             the icon show in the sidebar,
   }
  **/
-export default [
-  {
-    path: '/post/post',
-    component: Layout,
-    redirect: '/post/post/list',
-    name: 'Post',
-    permissions: ['Post@index'],
-    meta: { title: () => i18n.t('post.title'), icon: 'fa-table' },
-    children: [
-      {
-        path: 'list',
-        name: 'Post List',
-        permissions: ['Post@index'],
-        component: () => import('@/views/Post/Post/List'),
-        meta: { title: () => i18n.t('post.title'), icon: 'fa-table' }
-      },
-      {
-        hidden: true,
-        path: ':id/edit',
-        name: 'Edit Post',
-        permissions: ['Post@update'],
-        component: () => import('@/views/Post/Post/Editor'),
-        meta: { title: () => i18n.t('global.terms.edit'), icon: 'fa-table' }
-      },
-      {
-        hidden: true,
-        path: 'create',
-        name: 'Create Post',
-        permissions: ['Post@store'],
-        component: () => import('@/views/Post/Post/Editor'),
-        meta: { title: () => i18n.t('global.terms.create'), icon: 'fa-table' }
-      }
-    ]
-  }
+export default [{}
   // Append More Routes. Don't remove me
 ]
